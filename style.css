@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Lato&family=Nunito+Sans&family=Poppins&family=Source+Code+Pro:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins';
+}
+
+.page-action-cont {
+    height: 3rem;
+    background-color: #107c41;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.page-action {
+    margin-left: 1rem;
+    color: white;
+}
+
+.cellprops-action-cont {
+    height: 3rem;
+    background-color: #f8f8ff;
+    display: flex;
+    align-items: center;
+}
+
+.cellprops-action-cont>* {
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+}
+
+.cellprops-action-cont>select {
+    border: none;
+    outline: none;
+    border-radius: 0.2rem;
+}
+
+.font-family-prop {
+    padding: 0.3rem;
+}
+
+.font-size-prop {
+    padding: 0.3rem;
+    font-family: 'Poppins';
+}
+
+.formula-action-cont {
+    height: 3rem;
+    background-color: #f8f8ff;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.formula-action-cont>input {
+    outline: none;
+    border-radius: 0.2rem;
+    padding: 0.25rem;
+}
+
+.formula-action-cont>span {
+    margin-left: 2.5rem;
+    margin-right: 1rem;
+}
+
+.address-bar {
+    width: 5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.formula-bar {
+    width: calc(100vw - 5rem);
+}
+
+.grid-cont {
+    height: calc(100vh - 3rem - 3rem - 3rem - 3rem);
+    position: relative;
+    overflow: scroll;
+}
+
+.top-left-dummy-box {
+    width: 2rem;
+    height: 2rem;
+    background-color: #f8f8ff;
+    border: 1px solid #dedede;
+    z-index: 15;
+    position: fixed;
+}
+
+.address-col-cont {
+    width: 2rem;
+    position: sticky;
+    top: 2rem;
+    left: 0;
+    z-index: 10;
+    background: #f8f8ff;
+}
+
+.address-row-cont {
+    height: 2rem;
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 2rem;
+    background: #f8f8ff;
+}
+
+.address-col {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dedede;
+}
+
+.address-row {
+    width: 5rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dedede;
+}
+
+.cells-cont {
+    position: absolute;
+    top: 0;
+    left: 2rem;
+}
+
+.rowCont {
+    display: flex;
+}
+
+.cell {
+    width: 5rem;
+    height: 2rem;
+    border: 1px solid #dedede;
+}
+
+.sheet-action-cont {
+    height: 3rem;
+    background-color: #F8F8FF;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 1.5rem;
+}
+
+.sheet-add-icon>span {
+    font-size: 1.5rem;
+}
+
+.sheet-folder-cont {
+    height: 1.5rem;
+    width: calc(100vw - 1.5rem);
+    background: #f8f8ff;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.sheet-folder {
+    text-decoration: underline;
+    font-weight: bold;
+}
