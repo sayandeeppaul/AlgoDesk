@@ -11,7 +11,7 @@ for (let i = 0; i < rows; i++) {
             fontFamily: "poppins",
             fontSize: 14,
             fontColor: "#000000",
-            BGColor: "#000000"
+            BGcolor: "#000000"
         }
         sheetRow.push(cellProps)
     }
@@ -67,7 +67,7 @@ italic.addEventListener('click', (e) => {
 })
 
 //underline function implemented successfully
-activeColorProp
+
 underline.addEventListener('click', (e) => {
     let address = addressBar.value
     let [cell, cellProp] = activeCell(address)
