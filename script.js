@@ -27,6 +27,10 @@ for (let i = 0; i < rows; i++) {
         let cell = document.createElement("div");
         cell.setAttribute("class", "cell")
         cell.setAttribute("contenteditable", "true")
+        cell.setAttribute('spellcheck', false)
+        //Attribute for cell and storage (sheetDB) identification
+        cell.setAttribute("rid",i)
+        cell.setAttribute("cid",j)
         rowCont.appendChild(cell)
         addressBarDisplay(cell, i, j)
     }
@@ -38,3 +42,9 @@ function addressBarDisplay(cell, i, j) {
         addressBar.value = `${String.fromCharCode(65 + j)}${i + 1}`
     })
 }
+
+// by default click on first cell
+let firstCell=document.querySelector(".cell")
+
+// Clicked by DOM 
+firstCell.click()

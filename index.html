@@ -32,6 +32,7 @@
             content_paste
         </span>
         <select class="font-family-prop">
+            <option value="poppins">Poppins</option>
             <option value="monospace">Monospace</option>
             <option value="sans-serif">Sans-Serif</option>
             <option value="arial">Arial</option>
@@ -46,24 +47,36 @@
             <option value="18">18</option>
             <option value="20">20</option>
         </select>
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined bold">
             format_bold
         </span>
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined italic">
             format_italic
         </span>
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined underline">
             format_underlined
         </span>
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined alignment">
             format_align_left
         </span>
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined alignment">
             format_align_center
         </span>
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined alignment">
             format_align_right
         </span>
+        <div class="color-prop">
+            <span class="material-symbols-outlined ">
+                format_color_text
+            </span>
+            <input type="color" name="" class="font-color-prop">
+        </div>
+        <div class="color-prop">
+            <span class="material-symbols-outlined">
+                format_color_fill
+            </span>
+            <input type="color" name="" class="BGcolor-prop">
+        </div>
     </div>
     <div class="formula-action-cont">
         <input type="text" readonly class="address-bar">
@@ -94,6 +107,7 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="cell-properties.js"></script>
 </body>
 
 </html>
