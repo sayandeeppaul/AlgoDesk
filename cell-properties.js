@@ -182,7 +182,7 @@ function addListenerToAttachCellProperties(cell) {
         cell.style.textAlign = cellProp.alignment;
                 
 
-        // Apply properties UI Props container
+        // Apply properties UI Props container UI change (2)
         bold.style.backgroundColor = cellProp.bold ? activeColorProp : inactiveColorProp;
         italic.style.backgroundColor = cellProp.italic ? activeColorProp : inactiveColorProp;
         underline.style.backgroundColor = cellProp.underline ? activeColorProp : inactiveColorProp;
@@ -190,7 +190,8 @@ function addListenerToAttachCellProperties(cell) {
         BGcolor.value = cellProp.BGcolor;
         fontSize.value = cellProp.fontSize;
         fontFamily.value = cellProp.fontFamily;
-        switch(cellProp.alignment) { // UI change (2)
+        switch(cellProp.alignment) { 
+
             case "left":
                 leftAlignment.style.backgroundColor = activeColorProp;
                 centerAlignment.style.backgroundColor = inactiveColorProp;
