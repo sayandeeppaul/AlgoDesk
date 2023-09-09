@@ -73,7 +73,7 @@ underline.addEventListener('click', (e) => {
     let [cell, cellProp] = activeCell(address)
     //Modification
     cellProp.underline = !cellProp.underline      //data change
-    cell.style.textDecoration = cellProp.underline ? "underline" : "normal"
+    cell.style.textDecoration = cellProp.underline ? "underline" : "none"
     underline.style.backgroundColor = cellProp.underline ? activeColorProp : inactiveColorProp
     underline.style.borderRadius = cellProp.underline ? "5px" : "0"
 })
