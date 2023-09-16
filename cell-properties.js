@@ -13,7 +13,8 @@ for (let i = 0; i < rows; i++) {
             fontColor: "#000000",
             BGcolor: "transparent",
             value:'',
-            formula:''
+            formula:'',
+            children:[]
         }
         sheetRow.push(cellProp)
     }
@@ -210,6 +211,9 @@ function addListenerToAttachCellProperties(cell) {
                 rightAlignment.style.backgroundColor = activeColorProp;
                 break;
         }
+        let formulaBar = document.querySelector('.formula-bar')
+        formulaBar.value=cellProp.formula
+        cell.value=cellProp.value 
     })
 }
 
