@@ -5,7 +5,7 @@ for (let i = 0; i < rows; i++) {
             let address = addressBar.value
             let [cell, cellProp] = getCellAndCellProp(address)
             let enteredData = cell.innerText
-            if (enteredData === cellProp.value) return
+            if (enteredData == cellProp.value) return
             cellProp.value = enteredData
             //if data modified then remove parent-child relation,formula empty and update children with new value 
             removeChildrenFromParent(cellProp.formula)
@@ -87,7 +87,7 @@ function evaluateFormula(formula) {
 // set cell UI and DB as well
 function setCellUIAndCellProp(evaluatedValue, formula, address) {
     let [cell, cellProp] = getCellAndCellProp(address)
-
+    
     //UI update
     cell.innerText = evaluatedValue
     // DB update
