@@ -87,7 +87,7 @@ function evaluateFormula(formula) {
 // set cell UI and DB as well
 function setCellUIAndCellProp(evaluatedValue, formula, address) {
     let [cell, cellProp] = getCellAndCellProp(address)
-    
+
     //UI update
     cell.innerText = evaluatedValue
     // DB update
