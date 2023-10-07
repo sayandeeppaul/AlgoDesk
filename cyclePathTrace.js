@@ -1,6 +1,6 @@
-function isGraphCyclicTracePath(graphComponentMatrix,cycleResponse) {
-    let visited = []          
-    let dfsVisited = []       
+function isGraphCyclicTracePath(graphComponentMatrix, cycleResponse) {
+    let visited = []
+    let dfsVisited = []
 
     for (let i = 0; i < rows; i++) {
         let visitedRow = []
@@ -25,10 +25,10 @@ function dfsDetectionTracePath(graphComponentMatrix, srcr, srcc, visited, dfsVis
         let [nbrr, nbrc] = graphComponentMatrix[srcr][srcc][children]
         if (visited[nbrr][nbrc] == false) {
             let response = dfsDetectionTracePath(graphComponentMatrix, nbrr, nbrc, visited, dfsVisited)
-            if (response == true) return true 
+            if (response == true) return true
         }
         else if (visited[nbrr][nbrc] === true && dfsVisited[nbrr][nbrc] === true) {
-            
+
             return true
         }
     }
