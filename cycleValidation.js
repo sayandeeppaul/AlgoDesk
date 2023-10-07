@@ -51,12 +51,12 @@ function dfsDetection(graphComponentMatrix, srcr, srcc, visited, dfsVisited) {
     // A1 -> [[0,1],[0,2],[0,3],[0,4] ....]
     for (let children = 0; children < graphComponentMatrix[srcr][srcc].length; children++) {
 
-        let [nbrr,nbrc] = graphComponentMatrix[srcr][srcc][children]
+        let [nbrr, nbrc] = graphComponentMatrix[srcr][srcc][children]
         if (visited[nbrr][nbrc] == false) {
             let response = dfsDetection(graphComponentMatrix, nbrr, nbrc, visited, dfsVisited)
             if (response == true) return true // Found cycle so return immediately no need to explore more path
         }
-        else if (visited[nbrr][nbrc]===true && dfsVisited[nbrr][nbrc] === true) {
+        else if (visited[nbrr][nbrc] === true && dfsVisited[nbrr][nbrc] === true) {
             // Found cycle so return immediately no need to explore more path
             return true
         }
