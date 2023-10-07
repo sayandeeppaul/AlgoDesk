@@ -24,15 +24,19 @@ formulaBar.addEventListener('keydown', (e) => {
         let [cell, cellProp] = getCellAndCellProp(address)
         if (inputFormula !== cellProp.formula)
             removeChildrenFromParent(cellProp.formula)
-        
+
         addChildrentoGraphComponent(inputFormula, address)
 
         // check formula is cyclic or not then only evaluate
         let isCyclic = isGraphCyclic(graphComponentMatrix)
         // true => cyclic       false => Not cyclic
         if (isCyclic === true) {
-            alert("Your formula is Cyclic")
-            removeChildrenFromGraphComponent(inputFormula, address) 
+            let response = confirm("Your Formula is Cyclic. Do you want to trace your path?")
+            while (response === true) {
+                isGraphCyclicTracePath(graphComponentMatrix)
+                response = confirm("Your Formula is Cyclic. Do you want to trace your path again?")
+            }
+            removeChildrenFromGraphComponent(inputFormula, address)
             return
         }
         let evaluatedValue = evaluateFormula(inputFormula)
