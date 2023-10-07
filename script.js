@@ -29,8 +29,8 @@ for (let i = 0; i < rows; i++) {
         cell.setAttribute("contenteditable", "true")
         cell.setAttribute('spellcheck', false)
         //Attribute for cell and storage (sheetDB) identification
-        cell.setAttribute("rid",i)
-        cell.setAttribute("cid",j)
+        cell.setAttribute("rid", i)
+        cell.setAttribute("cid", j)
         rowCont.appendChild(cell)
         addressBarDisplay(cell, i, j)
     }
@@ -44,7 +44,7 @@ function addressBarDisplay(cell, i, j) {
 }
 
 // by default click on first cell
-let firstCell=document.querySelector(".cell")
+let firstCell = document.querySelector(".cell")
 
 // Clicked by DOM 
 firstCell.click()
