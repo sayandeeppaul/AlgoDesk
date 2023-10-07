@@ -12,6 +12,7 @@ for (let i = 0; i < rows; i++) {
 
 // true => cyclic       false => Not cyclic
 function isGraphCyclic(graphComponentMatrix) {
+
     // dependency array => visited      dfsVisited (2D array)
     let visited = []          // node visit trace
     let dfsVisited = []       // stack visit trace
@@ -31,11 +32,11 @@ function isGraphCyclic(graphComponentMatrix) {
         for (let j = 0; j < cols; j++) {
             let response = dfsDetection(graphComponentMatrix, i, j, visited, dfsVisited)
             if (response == true) {
-                return true
+                return [i,j]
             }
         }
     }
-    return false
+    return null
 }
 
 // start => visitid[true] dfsVisited[true]
