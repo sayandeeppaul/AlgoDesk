@@ -28,12 +28,12 @@ formulaBar.addEventListener('keydown', (e) => {
         addChildrentoGraphComponent(inputFormula, address)
 
         // check formula is cyclic or not then only evaluate
-        let isCyclic = isGraphCyclic(graphComponentMatrix)
+        let cycleResponse = isGraphCyclic(graphComponentMatrix)
         // true => cyclic       false => Not cyclic
-        if (isCyclic === true) {
+        if (cycleResponse) {
             let response = confirm("Your Formula is Cyclic. Do you want to trace your path?")
             while (response === true) {
-                isGraphCyclicTracePath(graphComponentMatrix)
+                isGraphCyclicTracePath(graphComponentMatrix, cycleResponse)
                 response = confirm("Your Formula is Cyclic. Do you want to trace your path again?")
             }
             removeChildrenFromGraphComponent(inputFormula, address)
