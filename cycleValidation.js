@@ -32,7 +32,7 @@ function isGraphCyclic(graphComponentMatrix) {
         for (let j = 0; j < cols; j++) {
             let response = dfsDetection(graphComponentMatrix, i, j, visited, dfsVisited)
             if (response == true) {
-                return [i,j]
+                return [i, j]
             }
         }
     }
