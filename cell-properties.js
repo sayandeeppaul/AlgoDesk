@@ -12,9 +12,9 @@ for (let i = 0; i < rows; i++) {
             fontSize: 14,
             fontColor: "#000000",
             BGcolor: "transparent",
-            value:'',
-            formula:'',
-            children:[]
+            value: '',
+            formula: '',
+            children: []
         }
         sheetRow.push(cellProp)
     }
@@ -160,7 +160,7 @@ alignment.forEach((alignElem) => {
     })
 })
 
-let allCells=document.querySelectorAll(".cell")
+let allCells = document.querySelectorAll(".cell")
 console.log(allCells)
 
 for (let i = 0; i < allCells.length; i++) {
@@ -181,9 +181,9 @@ function addListenerToAttachCellProperties(cell) {
         cell.style.fontSize = cellProp.fontSize + "px";
         cell.style.fontFamily = cellProp.fontFamily;
         cell.style.color = cellProp.fontColor;
-        cell.style.backgroundColor = cellProp.BGcolor 
+        cell.style.backgroundColor = cellProp.BGcolor
         cell.style.textAlign = cellProp.alignment;
-                
+
 
         // Apply properties UI Props container UI change (2)
         bold.style.backgroundColor = cellProp.bold ? activeColorProp : inactiveColorProp;
@@ -193,7 +193,7 @@ function addListenerToAttachCellProperties(cell) {
         BGcolor.value = cellProp.BGcolor;
         fontSize.value = cellProp.fontSize;
         fontFamily.value = cellProp.fontFamily;
-        switch(cellProp.alignment) { 
+        switch (cellProp.alignment) {
 
             case "left":
                 leftAlignment.style.backgroundColor = activeColorProp;
@@ -212,8 +212,8 @@ function addListenerToAttachCellProperties(cell) {
                 break;
         }
         let formulaBar = document.querySelector('.formula-bar')
-        formulaBar.value=cellProp.formula
-        cell.value=cellProp.value 
+        formulaBar.value = cellProp.formula
+        cell.value = cellProp.value
     })
 }
 
