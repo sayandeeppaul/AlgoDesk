@@ -17,7 +17,7 @@ for (let i = 0; i < rows; i++) {
 
 let formulaBar = document.querySelector('.formula-bar')
 
-formulaBar.addEventListener('keydown', async(e) => {
+formulaBar.addEventListener('keydown', async (e) => {
     if (e.key === 'Enter' && formulaBar.value) {
         let inputFormula = formulaBar.value
         let address = addressBar.value
