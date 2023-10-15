@@ -174,7 +174,7 @@ body {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     gap: 1rem;
-    background-color: #ecf0f1;
+    background-color: #f8f8ff;
 }
 .sheet-actions-cont > * {
     display: inline-block;
