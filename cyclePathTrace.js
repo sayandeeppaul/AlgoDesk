@@ -52,7 +52,7 @@ async function dfsDetectionTracePath(graphComponentMatrix, srcr, srcc, visited, 
         }
         else if (visited[nbrr][nbrc] === true && dfsVisited[nbrr][nbrc] === true) {
             let cyclicCell = document.querySelector(`.cell[rid="${srcr}"][cid="${srcc}"]`)
-            cell.style.backgroundColor = "lightsalmon"
+            cyclicCell.style.backgroundColor = "lightsalmon"
             await colorPromise()
             cyclicCell.style.backgroundColor = "transparent"
             await colorPromise()
