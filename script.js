@@ -42,9 +42,3 @@ function addressBarDisplay(cell, i, j) {
         addressBar.value = `${String.fromCharCode(65 + j)}${i + 1}`
     })
 }
-
-// by default click on first cell
-let firstCell = document.querySelector(".cell")
-
-// Clicked by DOM 
-firstCell.click()
