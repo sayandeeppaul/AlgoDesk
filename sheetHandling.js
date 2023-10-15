@@ -16,8 +16,51 @@ addSheetBtn.addEventListener("click", (e) => {
     createDB()
     createGraphcomponentMatrix()
     handleSheetActiveness(sheet)
+    handleSheetRemoval(sheet)
     sheet.click()
 })
+
+function handleSheetUIRemoval(sheet) {
+    sheet.remove()
+    let allSheetFolders = document.querySelectorAll(".sheet-folder");
+    for (let i = 0; i < allSheetFolders.length; i++) {
+        allSheetFolders[i].setAttribute("id", i)
+        let sheetContent = allSheetFolders[i].querySelector(".sheet-content")
+        sheetContent.innerText = `Sheet ${i + 1}`
+        allSheetFolders[i].style.backgroundColor = "transparent"
+    }
+    allSheetFolders[0].style.backgroundColor = "#dedede"
+}
+
+function handleSheetRemoval(sheet) {
+    sheet.addEventListener('mousedown', (e) => {
+        // 0=>left    1=>scrollbar   2=>right
+        if (e.button !== 2) return
+
+        let allSheetFolders = document.querySelectorAll(".sheet-folder");
+        if (allSheetFolders.length === 1) {
+            alert("You need to have atleast one sheet")
+            return
+        }
+
+        let response = confirm("Your sheet will be removed permanently, Are you sure ?")
+        if (response === false) return
+        let sheetIdx = Number(sheet.getAttribute("id"))
+
+        // DB
+        collectedSheetDB.splice(sheetIdx, 1)
+        collectedGraphComponentMatrix.splice(sheetIdx, 1)
+        // UI
+        handleSheetUIRemoval(sheet)
+
+        // after delete any sheet navigate to the first sheet
+
+        sheetDB = collectedSheetDB[0]
+        graphComponentMatrix = collectedGraphComponentMatrix[0]
+        handleSheetProperties()
+
+    })
+}
 
 function handleSheetUI(sheet) {
     let allSheetFolders = document.querySelectorAll(".sheet-folder");
