@@ -176,12 +176,15 @@ body {
     gap: 1rem;
     background-color: #f8f8ff;
 }
-.sheet-actions-cont > * {
+
+.sheet-actions-cont>* {
     display: inline-block;
 }
+
 .sheet-add-icon {
     width: 2vw;
 }
+
 .sheet-add-icon:hover {
     cursor: pointer;
 }
@@ -191,9 +194,10 @@ body {
     align-items: center;
     height: 80%;
     width: 5rem;
-    width: calc( 100vw - 2vw );
+    width: calc(100vw - 2vw);
     overflow: auto;
 }
+
 .sheet-folder {
     height: 80%;
     text-decoration: underline;
@@ -205,6 +209,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .sheet-content {
     width: 5rem;
 }
