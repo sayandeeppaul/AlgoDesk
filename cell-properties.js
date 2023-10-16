@@ -7,27 +7,6 @@ let sheetDB = []
     handleSheetProperties()
 }
 
-// for (let i = 0; i < rows; i++) {
-//     let sheetRow = []
-//     for (let j = 0; j < cols; j++) {
-//         let cellProp = {
-//             bold: false,
-//             italic: false,
-//             underline: false,
-//             alignment: "left",
-//             fontFamily: "poppins",
-//             fontSize: 14,
-//             fontColor: "#000000",
-//             BGcolor: "transparent",
-//             value: '',
-//             formula: '',
-//             children: []
-//         }
-//         sheetRow.push(cellProp)
-//     }
-//     sheetDB.push(sheetRow)
-// }
-
 // active - inactive color code declarartion
 
 let activeColorProp = "#dedede";
@@ -48,8 +27,6 @@ let fontColor = document.querySelector(".font-color-prop")
 let BGcolor = document.querySelector(".BGcolor-prop")
 
 // writing the working flow of these properties
-
-
 //bold function implemented successfully
 
 bold.addEventListener('click', (e) => {
