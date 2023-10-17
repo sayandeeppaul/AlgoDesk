@@ -103,13 +103,12 @@ fontColor.addEventListener('change', (e) => {
 
 //background-color function implemented successfully
 
-BGcolor.addEventListener('change', (e) => {
-    let address = addressBar.value
-    let [cell, cellProp] = getCellAndCellProp(address)
+BGcolor.addEventListener("change", (e) => {
+    let address = addressBar.value;
+    let [cell, cellProp] = getCellAndCellProp(address);
 
-    //Modification
-    cellProp.BGColor = BGcolor.value                        //data change
-    cell.style.backgroundColor = cellProp.BGColor
+    cellProp.BGcolor = BGcolor.value; // Data change
+    cell.style.backgroundColor = cellProp.BGcolor;
     BGcolor.value = cellProp.BGcolor;
 })
 
@@ -174,7 +173,7 @@ function addListenerToAttachCellProperties(cell) {
         italic.style.backgroundColor = cellProp.italic ? activeColorProp : inactiveColorProp;
         underline.style.backgroundColor = cellProp.underline ? activeColorProp : inactiveColorProp;
         fontColor.value = cellProp.fontColor;
-        BGcolor.value = cellProp.BGcolor;
+        cell.style.backgroundColor = cellProp.BGcolor === "#000000" ? "transparent" : cellProp.BGcolor;
         fontSize.value = cellProp.fontSize;
         fontFamily.value = cellProp.fontFamily;
         switch (cellProp.alignment) {
