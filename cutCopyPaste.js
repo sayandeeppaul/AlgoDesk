@@ -72,4 +72,36 @@ cutBtn.addEventListener("click", (e) => {
 
 pasteBtn.addEventListener("click", (e) => {
 
+    // target cell where we paste the data that we have copied
+    let address = addressBar.value
+    let [targetRow, targetCol] = decodeRIDCIDFromAdress(address)
+
+    // created rowDiff and colDiff to set the Paste area
+    let rowDiff = Math.abs(rangeStorage[1][0] - rangeStorage[0][0])
+    let colDiff = Math.abs(rangeStorage[1][1] - rangeStorage[0][1])
+
+    for (let i = targetRow, r = 0; i <= targetRow + rowDiff; i++, r++) {
+        for (let j = targetCol, c = 0; j <= targetCol + colDiff; j++, c++) {
+            let cell = document.querySelector(`.cell[rid="${i}"][cid="${j}"]`)
+
+            if (!cell) continue
+
+            // DB
+            let cellProp = sheetDB[i][j]
+            let data = copyData[r][c]
+            
+            cellProp.value = data.value
+            cellProp.bold = data.bold
+            cellProp.italic = data.italic
+            cellProp.underline = data.underline
+            cellProp.fontColor = data.fontColor
+            cellProp.BGcolor = data.BGcolor
+            cellProp.fontSize = data.fontSize
+            cellProp.fontFamily = data.fontFamily
+            cellProp.alignment = data.alignment
+
+            // UI
+            cell.click()
+        }
+    }
 })
