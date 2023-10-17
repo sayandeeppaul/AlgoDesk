@@ -101,7 +101,6 @@ function handleSheetActiveness(sheet) {
 
 function createDB() {
     let sheetDB = []
-
     for (let i = 0; i < rows; i++) {
         let sheetRow = []
         for (let j = 0; j < cols; j++) {
