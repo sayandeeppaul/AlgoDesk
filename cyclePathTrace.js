@@ -13,7 +13,6 @@ async function isGraphCyclicTracePath(graphComponentMatrix, cycleResponse) {
         visited.push(visitedRow)
         dfsVisited.push(dfsVisitedRow)
     }
-
     let response = await dfsDetectionTracePath(graphComponentMatrix, srcr, srcc, visited, dfsVisited)
 
     if (response === true) return Promise.resolve(true)
