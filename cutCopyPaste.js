@@ -65,7 +65,6 @@ copyBtn.addEventListener("click", (e) => {
         copyData.push(copyRow)
     }
     defaultCellsUI()
-
 })
 
 cutBtn.addEventListener("click", (e) => {
