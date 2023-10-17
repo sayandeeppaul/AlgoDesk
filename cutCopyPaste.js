@@ -49,6 +49,8 @@ let pasteBtn = document.querySelector(".paste")
 
 let copyData = []
 copyBtn.addEventListener("click", (e) => {
+    if (rangeStorage.length < 2) return
+
     let stRow = rangeStorage[0][0]
     let stCol = rangeStorage[0][1]
     let endRow = rangeStorage[1][0]
@@ -67,7 +69,32 @@ copyBtn.addEventListener("click", (e) => {
 })
 
 cutBtn.addEventListener("click", (e) => {
+    console.log("inside cut")
+    if (rangeStorage.length < 2) return
 
+    let [stRow, stCol, endRow, endCol] = [rangeStorage[0][0], rangeStorage[0][1], rangeStorage[1][0], rangeStorage[1][1]]
+
+    for (let i = stRow; i <= endRow; i++) {
+        for (let j = stCol; j <= endCol; j++) {
+            let cell = document.querySelector(`.cell[rid="${i}"][cid="${j}"]`)
+
+            // DB
+            let cellProp = sheetDB[i][j]
+            cellProp.value = ''
+            cellProp.bold = false
+            cellProp.italic = false
+            cellProp.underline = false
+            cellProp.fontColor = "#000000"
+            cellProp.BGcolor = "transparent"
+            cellProp.fontSize = 14
+            cellProp.fontFamily = "poppins"
+            cellProp.alignment = "left"
+
+            // UI
+            cell.click()
+        }
+        defaultCellsUI()
+    }
 })
 
 pasteBtn.addEventListener("click", (e) => {
@@ -89,7 +116,7 @@ pasteBtn.addEventListener("click", (e) => {
             // DB
             let cellProp = sheetDB[i][j]
             let data = copyData[r][c]
-            
+
             cellProp.value = data.value
             cellProp.bold = data.bold
             cellProp.italic = data.italic
